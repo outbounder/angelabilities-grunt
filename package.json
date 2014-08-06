@@ -1,9 +1,10 @@
 {
   "name": "angelabilities-grunt",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "release": "angel grunt release && npm publish"
   },
   "peerDependencies": {
     "grunt": "~0.4.x",
