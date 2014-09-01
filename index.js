@@ -42,9 +42,12 @@ module.exports = function(angel, done) {
           angel.grunt.loadNpmTasks(r)
       })
 
-      angel.grunt.loadTasks(local_grunt_scripts)
-
-      done()
+      fs.exists(local_grunt_scripts, function(found){
+        if(found)
+          angel.grunt.loadTasks(local_grunt_scripts)
+        done()
+      })
+      
     } catch(err){
       console.error("failed to initialize angel grunt ability", err)
     }
